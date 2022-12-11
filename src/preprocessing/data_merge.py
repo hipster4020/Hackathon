@@ -14,37 +14,21 @@ def main():
     """
 
     # Data Load
-    d_list = [
-        "/train/",  # train
-        "/validation/format_train/",  # validation
-        "/validation/format_test/",  # test
-    ]
-
     train_data = []
     val_data = []
     test_data = []
+    data = [[] for _ in config.data]
 
-    for k, d in tqdm(enumerate(d_list)):
+    for k, d in tqdm(enumerate(config.data)):
+
         for i in range(3):
-            path = config.pwd + "session_" + str(i + 2) + str(d)
-
+            path = os.path.join(config.pwd, "session_{}".format(i + 2), str(d))
             entries = os.listdir(path)
             for e in entries:
-                # train
-                if k == 0:
-                    with open(str(path) + str(e)) as f:
-                        for j in json.load(f)["sessionInfo"][0]["dialog"]:
-                            train_data.append(j)
-                # val
-                elif k == 1:
-                    with open(str(path) + str(e)) as f:
-                        for j in json.load(f)["sessionInfo"][0]["dialog"]:
-                            val_data.append(j)
-                # test
-                elif k == 2:
-                    with open(str(path) + str(e)) as f:
-                        for j in json.load(f)["sessionInfo"][0]["dialog"]:
-                            test_data.append(j)
+                with open(os.path.join(path, str(e))) as f:
+                    for j in json.load(f)["sessionInfo"][0]["dialog"]:
+                        data[k].append(j)
+    train_data, val_data, test_data = data
 
     # json to dataframe
     df_train = pd.DataFrame(train_data)
