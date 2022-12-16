@@ -7,7 +7,7 @@ PATH:
     model_config:
         pretrained_model_name_or_path: kakaobrain/kogpt
         revision: KoGPT6B-ryan1.5b-float16  # or float32 version: revision=KoGPT6B-ryan1.5b
-        pad_token_id: 1  # tokenizer.eos_token_id
+        pad_token_id: 3  # tokenizer.eos_token_id
         torch_dtype: auto
         low_cpu_mem_usage: true
 
