@@ -68,7 +68,7 @@ def load(
                         ]
                     )
                     input_text.append(text)
-                accumulator += ("\n" + prev_summary) if prev_hist_summary else prev_summary
+                accumulator += ("\n" + prev_summary) if prev_summary else prev_summary
                 prev_summary = su
                 prev_dialog = di
 
@@ -76,7 +76,7 @@ def load(
 
     def tokenize(data):
         tokenize = tokenizer(
-            data["input_text"],
+            [t + tokenizer.eos_token for t in data["input_text"]],
             max_length=seq_len + 1,
             padding="max_length",
             truncation=True,
