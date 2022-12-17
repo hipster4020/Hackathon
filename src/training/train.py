@@ -19,10 +19,10 @@ warnings.filterwarnings(action="ignore")
 @hydra.main(config_path="./", config_name="config")
 def main(cfg):
     torch.manual_seed(42)
-    tokenizer = AutoTokenizer.from_pretrained(cfg.PATH.tokenizer)
+    tokenizer = AutoTokenizer.from_pretrained(**cfg.PATH.tokenizer_config)
 
     train_dataset, eval_dataset = load(tokenizer=tokenizer, **cfg.DATASETS)
-    model = AutoModelForCausalLM.from_pretrained(cfg.PATH.model_name)
+    model = AutoModelForCausalLM.from_pretrained(cfg.PATH.model_config)
 
     if cfg.ETC.get("wandb_project") and os.environ.get("LOCAL_RANK", 0) == 0:
         os.environ["WANDB_PROJECT"] = cfg.ETC.wandb_project
