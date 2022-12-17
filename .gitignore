@@ -132,5 +132,5 @@ dmypy.json
 # add
 data/
 src/preprocessing/config.py
-src/config.yaml
-src/preprocessing/outputs/
+src/*/config.yaml
+src/*/outputs/
