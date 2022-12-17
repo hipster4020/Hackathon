@@ -133,3 +133,4 @@ dmypy.json
 data/
 src/preprocessing/config.py
 src/*/config.yaml
+src/*/outputs/
