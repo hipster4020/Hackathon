@@ -18,8 +18,8 @@ gpu info : A100-SXM4-40GB<br><br>
 # 👉🏻 훈련 로그
 https://wandb.ai/psh_pat/hackathon/runs/45xlkwzn?workspace=user-psh_pat<br><br>
 
-# 훈련 모델 구조에 대한 설명 자료
+# 👉🏻 훈련 모델 구조에 대한 설명 자료
 KoGPT2 (한국어 GPT-2) Ver 2.0 finetuning<br>
 https://github.com/SKT-AI/KoGPT2<br><br>
 
-# 멀티세션 대화 데이터 피드백 내용
+# 👉🏻 멀티세션 대화 데이터 피드백 내용
