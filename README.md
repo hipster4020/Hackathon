@@ -7,10 +7,9 @@ gpu info : A100-SXM4-40GB<br><br>
 
 # 👉🏻 실행 가능한 형태의 훈련 코드, 인퍼 코드
 ## run command
+<b>src/training/main.ipynb</b><br>
 ◉ <b>Install</b> 설치<br>
-◉ <b>Run</b> train<br>
-◉ <b>Predict</b> 결과 추출<br>
-<b>src/training/main.ipynb</b><br><br>
+◉ <b>Predict</b> 결과 추출<br><br>
 
 # 👉🏻 최종 훈련된 모델
 <b>model/</b><br><br>
